@@ -1,0 +1,12 @@
+fastapi
+redis
+types-redis
+uvicorn
+python-multipart
+azure-core
+azure-storage-blob
+python-docx
+PyPDF2
+moviepy
+azure-cognitiveservices-speech
+openai
