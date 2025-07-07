@@ -31,7 +31,11 @@ async def summarize(file: UploadFile = File(...)):
         raise HTTPException(status_code=400, detail="Invalid file extension.")
     
     # Upload the file to blob storage
-    await upload_file(file)
+    uploaded = await upload_file(file)
+
+    # If the upload failed, return the error response
+    if 500 == uploaded.status_code:
+        return uploaded
 
     text = ""
 
